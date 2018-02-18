@@ -1,10 +1,5 @@
-<p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
-    </a>
-    <h1 align="center">Yii 2 Basic Project Template</h1>
-    <br>
-</p>
+Yii 2 Basic Project Template
+============================
 
 Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
 rapidly creating small projects.
@@ -51,6 +46,7 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 You can then install this project template using the following command:
 
 ~~~
+php composer.phar global require "fxp/composer-asset-plugin:^1.3.1"
 php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
 ~~~
 
@@ -60,6 +56,7 @@ directly under the Web root.
 ~~~
 http://localhost/basic/web/
 ~~~
+
 
 ### Install from an Archive File
 
@@ -105,6 +102,7 @@ return [
 - Refer to the README in the `tests` directory for information specific to basic application tests.
 
 
+
 TESTING
 -------
 
@@ -119,7 +117,7 @@ Tests can be executed by running
 
 ```
 vendor/bin/codecept run
-```
+``` 
 
 The command above will execute unit and functional tests. Unit tests are testing the system components, while functional
 tests are for testing user interaction. Acceptance tests are disabled by default as they require additional setup since
