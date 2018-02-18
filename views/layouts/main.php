@@ -33,25 +33,26 @@ AppAsset::register($this);
         'options' => [
             'class' => 'navbar-default navbar-fixed-top',
         ],
+        
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Магазин', 'url' => ['/site/index']],
-            
+            ['label' => 'Магазин', 'url' => ['/site/index']],            
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+                ['label' => '</i>Вход', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->pupil . ')',
+                    'Выход(' . Yii::$app->user->identity->pupil . ')',
                     ['class' => 'btn btn-link logout']
                 )
                 . Html::endForm()
                 . '</li>'
             )
         ],
+        'encodeLabels' => false,
     ]);
     NavBar::end();
     ?>
