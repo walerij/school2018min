@@ -41,5 +41,14 @@ class ShopController extends Controller
     {
         return $this->render('index');
     }
+     public function actionCourse()
+    {
+        return $this->render('index');
+    }
+    
+      public function actionLesson()
+    {
+        return $this->render('index');
+    }
 }
 
