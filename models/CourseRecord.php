@@ -70,5 +70,11 @@ class CourseRecord extends \yii\db\ActiveRecord
             'stat_duration' => 'Stat Duration',
             'is_active' => 'Is Active',
         ];
+        
+        
+    }
+    public function getPayment()
+    {
+        return $this->hasMany(LessonRecord::className(),['course_id'=>'id']);
     }
 }
