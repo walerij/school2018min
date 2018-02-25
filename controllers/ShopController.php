@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\CourseRecord;
 
 class ShopController extends Controller
 {
@@ -37,13 +38,22 @@ class ShopController extends Controller
             ],
         ];
     }
-  public function actionIndex()
+  public function actionIndex($id=1)
     {
-        return $this->render('index');
+           $courses = CourseRecord::find()->all();
+         //->where(['id'=>$session['__id']])
+           if(isset($_GET['id']))
+               $id=$_GET['id'];
+        return $this->render('index',
+                ['courses'=>$courses,
+                    'active_id'=>$id]);
     }
      public function actionCourse()
     {
-        return $this->render('index');
+         $courses = CourseRecord::find()->all();
+         //->where(['id'=>$session['__id']])
+        return $this->render('index',
+                ['courses'=>$courses]);
     }
     
       public function actionLesson()

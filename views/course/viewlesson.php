@@ -19,11 +19,11 @@
             }
             ?>
             ?>
-                <?foreach ($model->steps as $step)
+                <?php foreach ($model->steps as $step)
                 { ?>
 
 
-                         <?  // if ($step->steptype=='video')
+                         <?php  // if ($step->steptype=='video')
                              switch ($step->steptype)
                                      {
                                    case 'video':
