@@ -73,7 +73,7 @@ class CourseRecord extends \yii\db\ActiveRecord
         
         
     }
-    public function getPayment()
+    public function getLesson()
     {
         return $this->hasMany(LessonRecord::className(),['course_id'=>'id']);
     }
