@@ -48,11 +48,13 @@ class ShopController extends Controller
                 ['courses'=>$courses,
                     'active_id'=>$id]);
     }
-     public function actionCourse()
+     public function actionCourse($id=1)
     {
-         $courses = CourseRecord::find()->all();
+           if(isset($_GET['id']))
+               $id=$_GET['id'];
+         $courses = CourseRecord::find()->where(['id'=>$id])->all();
          //->where(['id'=>$session['__id']])
-        return $this->render('index',
+        return $this->render('course_current',
                 ['courses'=>$courses]);
     }
     
