@@ -38,6 +38,12 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
+            ['label' => 'Кабинет пользователя', 
+                'items'=>[
+                    ['label' => 'Мои уроки', 'url' => ['/upload/index']],
+                   
+                    ],  'encodeLabels' => false,
+                ],  
             ['label' => 'Магазин', 'url' => ['/shop/index']],            
             Yii::$app->user->isGuest ? (
                 ['label' => '</i>Вход', 'url' => ['/site/login']]
