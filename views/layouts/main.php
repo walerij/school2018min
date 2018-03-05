@@ -40,7 +40,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Кабинет пользователя', 
                 'items'=>[
-                    ['label' => 'Мои уроки', 'url' => ['/upload/index']],
+                    ['label' => 'Мои уроки', 'url' => ['/user/index']],
                    
                     ],  'encodeLabels' => false,
                 ],  

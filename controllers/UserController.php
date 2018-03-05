@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\CourseRecord;
 use app\models\UserRecord;
+use app\models\AccessRecord;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -16,10 +17,12 @@ use yii\filters\VerbFilter;
 class UserController extends Controller
 {
     public function actionIndex()
-    {
+    { $session = Yii::$app->session;
+        $access = AccessRecord::find()->where(['pupil_id'=>$session['__id']])->all();
         
         
-        return $this->render('index');
+        return $this->render('index',
+                ['access_user'=>$access]);
     }
     
     

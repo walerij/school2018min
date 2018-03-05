@@ -62,11 +62,11 @@ class AccessRecord extends \yii\db\ActiveRecord
     
     public function getUser()
     {
-        return $this->hasMany(UserRecord::className(),['id'=>'pupil_id']);
+        return $this->hasOne(UserRecord::className(),['id'=>'pupil_id']);
     }
      public function getCourse()
     {
-        return $this->hasMany(CourseRecord::className(),['packet'=>'access']);
+        return $this->hasMany(CourseRecord::className(),['access'=>'packet']);
     }
     
     
