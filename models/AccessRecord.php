@@ -82,18 +82,21 @@ class AccessRecord extends \yii\db\ActiveRecord
      //закрытие доступа (статус=close)
     public function CloseAccess()
     {
-        $this->status='close';
+        $this->status='clos';
     }
     
      //добавление доступа (статус=wait) - до одобрения запись в режиме ожидания
     public function AddAccess($access)
     {
+
+     
         $this->pupil_id=$access->pupil_id;
         $this->payment_id=1;//$access->payment_id;
         $this->packet =$access->packet ;
-        $this->access_from =date();
-        $this->access_till =date();//$access->access_till ;
-        $this->info ='-';//$access->info ;
+        $this->access_from =date('Y-m-d');
+        $this->access_till =date('Y-m-d');//$access->access_till ;
+        $this->info =$access->info ;
+        $this->bonus_till=date('Y-m-d');
         $this->status='wait';
     }
 }

@@ -28,15 +28,15 @@ class UserController extends Controller {
         $new_access = new AccessRecord();
 
         if ($new_access->load(Yii::$app->request->post())) {
-            if ($new_access->validate()) {
+            /*if ($new_access->validate()) {*/
                 $access_save = new AccessRecord();
                 $access_save->AddAccess($new_access);
-                $access_save->info = "мое инфо";
+                //$access_save->info = "мое инфо";
                 $access_save->save();
                 return $this->render('add', ['model' => $access_save]); //$this->redirect('/user/index');
-            } else {
+            /*} else {
                 return $this->redirect('/site/index');
-            }
+            }*/
         }
         return $this->render('add', ['model' => $new_access]);
     }
