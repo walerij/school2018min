@@ -89,11 +89,11 @@ class AccessRecord extends \yii\db\ActiveRecord
     public function AddAccess($access)
     {
         $this->pupil_id=$access->pupil_id;
-        $this->payment_id=$access->payment_id;
+        $this->payment_id=1;//$access->payment_id;
         $this->packet =$access->packet ;
-        $this->access_from =$access->access_from ;
-        $this->access_till =$access->access_till ;
-        $this->info =$access->info ;
+        $this->access_from =date();
+        $this->access_till =date();//$access->access_till ;
+        $this->info ='-';//$access->info ;
         $this->status='wait';
     }
 }
