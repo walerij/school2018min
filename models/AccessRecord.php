@@ -69,5 +69,23 @@ class AccessRecord extends \yii\db\ActiveRecord
         return $this->hasMany(CourseRecord::className(),['access'=>'packet']);
     }
     
+    //открытие доступа (статус=open)
+    public function OpenAccess()
+    {
+        $this->status='open';
+    }
     
+    
+     //закрытие доступа (статус=close)
+    public function CloseAccess()
+    {
+        $this->status='close';
+    }
+    
+     //добавление доступа (статус=wait) - до одобрения запись в режиме ожидания
+    public function AddAccess($access)
+    {
+        $this->pupil_id=$access->pupil_id;
+        $this->status='wait';
+    }
 }
