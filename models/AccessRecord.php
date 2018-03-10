@@ -60,10 +60,13 @@ class AccessRecord extends \yii\db\ActiveRecord
         ];
     }
     
+    //получение пользователя для записи
     public function getUser()
     {
         return $this->hasOne(UserRecord::className(),['id'=>'pupil_id']);
     }
+    
+    //получение курсов для записи дотсупа
      public function getCourse()
     {
         return $this->hasMany(CourseRecord::className(),['access'=>'packet']);
@@ -86,6 +89,11 @@ class AccessRecord extends \yii\db\ActiveRecord
     public function AddAccess($access)
     {
         $this->pupil_id=$access->pupil_id;
+        $this->payment_id=$access->payment_id;
+        $this->packet =$access->packet ;
+        $this->access_from =$access->access_from ;
+        $this->access_till =$access->access_till ;
+        $this->info =$access->info ;
         $this->status='wait';
     }
 }
