@@ -7,7 +7,7 @@ use app\models\UserRecord;
 use kartik\datetime\DateTimePicker;
 use kartik\date\DatePicker;
 ?>
-?>
+
 
 <pre>Добавить пакет пользователю</pre>
 

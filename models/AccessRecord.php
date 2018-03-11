@@ -93,10 +93,10 @@ class AccessRecord extends \yii\db\ActiveRecord
         $this->pupil_id=$access->pupil_id;
         $this->payment_id=1;//$access->payment_id;
         $this->packet =$access->packet ;
-        $this->access_from =date('Y-m-d');
-        $this->access_till =date('Y-m-d');//$access->access_till ;
+        $this->access_from =$access->access_from;//date('Y-m-d');
+        $this->access_till =$access->access_till;//date('Y-m-d');//$access->access_till ;
         $this->info =$access->info ;
-        $this->bonus_till=date('Y-m-d');
+        $this->bonus_till=$access->bonus_till;
         $this->status='wait';
     }
 }
