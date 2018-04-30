@@ -20,6 +20,12 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+      <!-- <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/animate.css">
+   <link rel="stylesheet" href="css/prettyPhoto.css">
+-->
     <?php $this->head() ?>
 </head>
 <body>
@@ -31,7 +37,7 @@ AppAsset::register($this);
         'brandLabel' => 'VideoSchool',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-default navbar-fixed-top',
+            'class' => 'navbar-inverse navbar-fixed-top',
         ],
         
     ]);
@@ -67,7 +73,7 @@ AppAsset::register($this);
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-     
+        
             <?= $content ?>
        
     </div>
