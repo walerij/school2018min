@@ -260,6 +260,7 @@ ul#nav li.current a { color: #fff; }
 #features .feature {
    margin-top: 30px;
    margin-bottom: 54px;
+   /*height: 400px;*/
 }
 #features .right {
    padding-left: 32px;
@@ -270,7 +271,7 @@ ul#nav li.current a { color: #fff; }
    float: left;   
 }
 #features h3 {
-   font: 16px/24px 'montserrat-bold', sans-serif;
+   font: 16px/24px 'arial black', sans-serif;
    text-transform: uppercase;
    letter-spacing: 1px;
    color: #222;
