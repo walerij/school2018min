@@ -1,28 +1,26 @@
+<section id='features'>
+    <?php foreach ($courses as $course) { ?>
+        <?php foreach ($course->lesson as $lesson) { ?>
+            <div class="row feature video">
 
-<?php foreach ($courses as $course) { ?>
-    <div class="panel panel-warning">
-        <div class="panel panel-heading">
-            <?= $course->course ?>
+                <div class="six columns left">
+                    <?= $lesson->lesson ?>
+
+                    <p><?= htmlspecialchars($lesson->intro) ?>
+                    </p>
+                </div>
+
+                <div class="six columns feature-media right">
+                    <div class="fluid-video-wrapper">
+
+                        <iframe src="https://www.youtube.com/embed/<?= $lesson->video ?>" width="480" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+            </div>
         </div>
-        <div class="panel-body">
-            <div class="list-group">
-                <?php foreach ($course->lesson as $lesson) {
-                    ?>
-                    <a href="#" class="list-group-item">
-                        <div class="list-group-item-heading">
-                            <h4><?=$lesson->lesson?></h4>
-                        </div>
-                        <div class="list-group-item-text">
-                            <?=htmlspecialchars($lesson->intro)?>
-                        </div>
-                    </a>
-
-                <?php }
-                ?>
-        </div>
-
 
     </div>
-</div>
-<?}?>
+    <?
+        }
+    }
+    ?>
+</section>
 
